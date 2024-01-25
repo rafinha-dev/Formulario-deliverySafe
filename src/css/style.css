@@ -1,6 +1,7 @@
 :root{
     --primary-color: #ffde59;
     --second-color: #ffbd59;
+    --clean-color: #fdeca7;
     --font-one : 'Londrina Solid', sans-serif;
     --font-thwo: 'Racing Sans One', sans-serif;
     --open-sand : 'Open Sans', sans-serif;
@@ -13,14 +14,14 @@
     padding: 0;
 }
 .body{
-    background-color: var(--second-color);
+    background-image: url(../img/teste.png);
 }
 .container-one{
     display: flex;
     justify-content: center;
     /* background-color: red; */
     align-items: center;
-    padding: 0 0 30% 0;
+    padding: 0 0 10% 0;
 }
 .title-container{
     padding: 3rem;
@@ -44,16 +45,20 @@
 .date{
     font-size: 2rem;
     float: right;
-    max-width: 10rem;
-    transform: translate(0);
+    background-color: var(--clean-color) ;
+    font-family: 'Open Sans', sans-serif;
+    max-width: 11rem;
+    transform: translate(0, 50%);
+    padding: 2rem 1rem;
+    border-radius: 10px;
 }
 .background-form{
-    height: 55%;
     min-width: 100%;
     background-color: var(--primary-color);
     display: flex;
     justify-content: center;
-    padding: 20% 2rem 2rem 2rem;
+    padding: 10% 2rem 2rem 2rem;
+    height: 100vh;
 
 }
 .form{
@@ -78,6 +83,16 @@ label{
     border: 1px solid gray;
     margin-bottom: 2rem;
 }
+.confirm-container{
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+    padding-left: 3.5rem;
+    background-color: red;
+    
+}
 .submit{
     min-width: 6rem;
     margin: auto;
@@ -89,4 +104,39 @@ label{
     border-radius: 10px;
     font-size: 1.8rem;
     font-family: var(--font-thwo);
+}
+@media (min-width: 768px){ 
+    .title{
+        font-size: 4.5rem;
+    }
+    .sub-title{
+        font-size: 2rem
+    }
+    .bici-image{
+        max-width: 12rem;
+    }
+    .date{
+        float: none;
+        margin: auto;
+        max-width: 30rem;
+        text-align: center;
+        font-weight: bold;
+    }
+    .form{
+        min-width: 50rem;
+    }
+    label{
+        font-size: 1.8rem;
+    }
+    .tel, .name{
+        height: 4rem;
+        border-radius: 20px;
+        font-size: 1.8rem;
+
+    }
+    .submit{
+        min-width: 12rem;
+        display: flex;
+        justify-content: center;
+    }
 }
