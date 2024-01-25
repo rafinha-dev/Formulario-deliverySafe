@@ -6,3 +6,87 @@
     --open-sand : 'Open Sans', sans-serif;
 
 }
+*{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.body{
+    background-color: var(--second-color);
+}
+.container-one{
+    display: flex;
+    justify-content: center;
+    /* background-color: red; */
+    align-items: center;
+    padding: 0 0 30% 0;
+}
+.title-container{
+    padding: 3rem;
+    max-width: 37rem;
+}
+.title{
+    font-size: 3rem;
+    font-family: var(--font-thwo);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+.sub-title{
+    font-size: 1.5rem;
+    font-family: var(--font-one);
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.bici-image{
+    max-width: 10rem;
+}
+.date{
+    font-size: 2rem;
+    float: right;
+    max-width: 10rem;
+    transform: translate(0);
+}
+.background-form{
+    height: 55%;
+    min-width: 100%;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    padding: 20% 2rem 2rem 2rem;
+
+}
+.form{
+    font-size: 1.4rem;
+    min-width: 35rem;
+    max-width: 50rem;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+label{
+    font-size: 1.4rem;
+    font-family: 'Open Sans', sans-serif;
+}
+.name, .tel{
+    height: 2.4rem;
+    font-size: 1.4rem;
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    border: 1px solid gray;
+    margin-bottom: 2rem;
+}
+.submit{
+    min-width: 6rem;
+    margin: auto;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    display: flex;
+    background-color: #ffffff;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 1.8rem;
+    font-family: var(--font-thwo);
+}

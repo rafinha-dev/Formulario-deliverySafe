@@ -13,31 +13,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 
 
-
+    <link rel="stylesheet" href="./src/css/style.css">
+    <meta name="description" content="">
     <title>Delivery safe</title>
 </head>
-<body class="container">
-    <header>
+<body class="body">
+    <div>
+    <header class="container-one">
         <div class="title-container">
-            <h1>Delivery bom</h1>
-            <h2>Entrega boa, tem segurança do inicio ao fim</h2>
+            <h1 class="title">Delivery bom</h1>
+            <h2 class="sub-title">Entrega boa, tem segurança do inicio ao fim.</h2>
         </div>
-        <img src="./src/img/logo.png" alt="Logo do delivery safe, placa de trânsito com entregador em cima da bicicleta">
+        <img src="./src/img/logo.png" alt="Logo do delivery safe, placa de trânsito com entregador em cima da bicicleta" class="bici-image">
     </header>
     <section>
         <!-- Aqui vem o cronometro -->
-        <p>26 fev/ seg <span class="time">14h </span></p>
+        <p class="date">26 fev/ seg <span class="time">14h </span></p>
     </section>
-    <form action="">
-        <label for="name">Preêncha seu nome</label>
-        <input type="text" id="name" placeholder="Nome">
-        <label for="e-mail">Preêncha o whatsapp</label>
-        <input type="text" value="(00)00000-0000" id="e-mail">
-        <div class="confirm-container">
-            <input type="checkbox" id="confirm">
-            <label for="confirm">Tenho interesse de ir ao evento</label>
-        </div>
-        <input type="submit" value="Enviar">
-    </form>
+    </div>
+    <div class="background-form">
+        <form action="" class="form">
+            <label for="name">Seu nome</label>
+            <input class="name" type="text" id="name" placeholder="Nome">
+
+            <label for="e-mail">Whatsapp</label>
+            <input class="tel" type="text" placeholder="(00)00000-0000" id="e-mail">
+
+            <div class="confirm-container">
+                <input type="checkbox" id="confirm">
+                <label for="confirm">Tenho interesse de ir ao evento</label>
+            </div>
+            <input type="submit" value="Enviar" class="submit">
+        </form>
+    </div>
 </body>
 </html>
