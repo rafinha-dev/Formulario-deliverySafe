@@ -122,7 +122,7 @@ label{
     padding: 1rem;
     font-family: var(--open-sand);
 }
-.confirm-container{
+/* .confirm-container{
     display: block;
     position: relative;
     cursor: pointer;
@@ -131,7 +131,7 @@ label{
     padding-left: 3.5rem;
     
     
-}
+} */
 .submit{
     min-width: 6rem;
     margin: auto;

@@ -8,7 +8,8 @@ const inputs = {
     checkbox : document.querySelector('#confirm'),
     sub_btn : document.querySelector('.submit'),
     verify : document.querySelectorAll('.check'),
-    warning : document.querySelector('.warning')
+    warning : document.querySelector('.warning'),
+    form: document.querySelector('.form')
 }
 
 const warning = ()=>{
@@ -17,19 +18,18 @@ const warning = ()=>{
         warning.appendChild(content)
         inputs.warning.appendChild(warning)
 }
-inputs.e_mail.addEventListener('input', ()=>{
-    const regex = /^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+@.+/
-    // console.log(inputs.e_mail.test(regex))
-    console.log(regex.test(inputs.e_mail.value))
-})
-inputs.name.addEventListener('input', ()=>{
-    const wordsRegex = /^[a-zA-Z\s]+$/
-    console.log(wordsRegex.test(inputs.name.value))
-} )
+// inputs.e_mail.addEventListener('input', ()=>{
+//     const regex = /^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+@.+/
+//     // console.log(inputs.e_mail.test(regex))
+//     console.log(regex.test(inputs.e_mail.value))
+// })
+// inputs.name.addEventListener('input', ()=>{
+//     const wordsRegex = /^[a-zA-Z\s]+$/
+//     console.log(wordsRegex.test(inputs.name.value))
+// } )
 inputs.tel.addEventListener('keyup', (e)=>{
     let tel = e.target
     tel.value = phoneMask(tel.value)
-    console.log(tel)
 })
 const phoneMask = (tel)=>{
     if(!tel) return ""
@@ -38,36 +38,33 @@ const phoneMask = (tel)=>{
     tel = tel.replace(/(\d)(\d{4})$/,"$1-$2")
     return tel
 }
-inputs.sub_btn.addEventListener('submit', (e)=> {
+
+const handleSubmit = (e) =>{
+    e.preventDefaut()
+
+    fetch('https://api.sheetmonkey.io/form/fgms3pPRE24gtzhh6Htk24', {
+
+        method: 'post',
+        headers: {
+            'Accept': 'Aplication/json',
+            'Content-Type' : 'application/json',
+        }, 
+        body: JSON.stringify({name: 'rafael', email: 'meuemail@gmail.com'})
+    })
+}
+
+inputs.form.addEventListener('submit', (e) =>{
     e.preventDefault()
+    let name = inputs.name.value
+    let phone = inputs.tel.value
+    let email = inputs.e_mail.value
+    fetch('https://api.sheetmonkey.io/form/fgms3pPRE24gtzhh6Htk24', {
 
-//     inputs.verify.forEach( (input, i)=>{
-//         let p = document.querySelector('.warning p')
-//         if(i == 0){
-//             if(input.value.length < 3 && p == null){
-//                 console.log(p)
-//                 warning()
-//             }
-//         }else if(i == 1){
-//             console.log(input.value)
-//             // criar padrão para regex 
-//         }else if(i == 2){
-//             console.log(input)
-//             if(input.value.length < 10 && p == null){https://accounts.google.com/SignOutOptions?hl=en&continue=https://mail.google.com/mail/&service=mail&ec=GBRAFw
-//                 warning()
-//             }
-//         }
-//     } )
-//     e.preventDefault()
-// })
-
-// const validateEmail = (email) =>{
-//     let validate = /\S+@\S+\.\S+/;
-//     return validate
-// }
-// let e_mail = inputs.e_mail
-// e_mail.addEventListener('keyup', (value)=>{
-//     if(!value) return ""
-//     value = value.replace
-//     // (/^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i)
+        method: 'post',
+        headers: {
+            'Accept': 'Aplication/json',
+            'Content-Type' : 'application/json',
+        }, 
+        body: JSON.stringify({name: name , email: email , tel: phone})
+    })
 })
