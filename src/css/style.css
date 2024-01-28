@@ -32,23 +32,33 @@
     font-family: var(--font-thwo);
     margin-bottom: 2rem;
     text-transform: uppercase;
+
+    animation: 2s outvh ;
 }
 .sub-title{
     font-size: 1.5rem;
     font-family: var(--font-one);
     font-weight: 300;
     text-transform: uppercase;
+    animation: 4s outvh
 }
 .bici-image{
     max-width: 10rem;
+    animation: 1.5s outvh-reverse;
+}
+.invite{
+    font-size: 1.3rem;
+    font-family: var(--open-sand);
+    padding: 1rem;
+    text-align: center;
 }
 .date{
     font-size: 2rem;
-    float: right;
+    margin: auto;
     background-color: var(--clean-color) ;
     font-family: 'Open Sans', sans-serif;
     max-width: 11rem;
-    transform: translate(0, 50%);
+    transform: translate(0, 20%);
     padding: 2rem 1rem;
     border-radius: 10px;
 }
@@ -65,7 +75,9 @@
     font-size: 1.4rem;
     min-width: 35rem;
     max-width: 50rem;
-    /* background-color: red; */
+    background-color: #fdeca74d;
+    padding: 1.5rem;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     
@@ -76,12 +88,30 @@ label{
     font-family: 'Open Sans', sans-serif;
 }
 .name, .tel, .e-mail{
-    height: 2.4rem;
+    height: 3rem;
     font-size: 1.4rem;
-    padding: 0.7rem 1rem;
-    border-radius: 10px;
+    padding: 0.7rem 1.5rem;
+    /* border-radius: 10px; */
     border: 1px solid gray;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
     margin-bottom: 2rem;
+    background-color: transparent;
+}
+.name:focus, .tel:focus, .e-mail:focus{
+    outline: 0;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    box-shadow:  0 10px 10px -10px black;
+}
+.name:focus::placeholder, .tel:focus::placeholder, .e-mail:focus::placeholder{
+    transform: translate(-4%, -100%);
+    font-size: 1rem;
+    transition: 500ms ease;
+}
+.submit:focus{
+    outline: none;
+    border: 2px solid black;
 }
 .warning{
     text-align: center;
@@ -99,7 +129,7 @@ label{
     font-size: 2.2rem;
     margin-bottom: 1.2rem;
     padding-left: 3.5rem;
-    background-color: red;
+    
     
 }
 .submit{
@@ -113,6 +143,7 @@ label{
     border-radius: 10px;
     font-size: 1.8rem;
     font-family: var(--font-thwo);
+    animation: 1s linear infinite alternate focus;
 }
 @media (min-width: 768px){ 
     .title{
@@ -124,9 +155,10 @@ label{
     .bici-image{
         max-width: 12rem;
     }
+    .invite{
+        font-size: 1.8rem;
+    }
     .date{
-        float: none;
-        margin: auto;
         max-width: 30rem;
         text-align: center;
         font-weight: bold;
@@ -139,7 +171,7 @@ label{
     }
     .tel, .name, .e-mail{
         height: 4rem;
-        border-radius: 20px;
+        /* border-radius: 20px; */
         font-size: 1.8rem;
 
     }
@@ -147,5 +179,32 @@ label{
         min-width: 12rem;
         display: flex;
         justify-content: center;
+    }
+}
+
+@keyframes outvh {
+    from{
+        transform: translate(110vh);
+    }
+    to{
+        transform: translate(0);
+    }
+    
+}
+@keyframes outvh-reverse {
+    from{
+        transform: translate(-110vh);
+    }
+    to{
+        transform: translate(0);
+    }
+    
+}
+@keyframes focus {
+    from {
+        transform: translate(0, 4%);
+    }
+    to{
+        transform: translate(0);
     }
 }
