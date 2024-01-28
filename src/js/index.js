@@ -17,8 +17,17 @@ const warning = ()=>{
         warning.appendChild(content)
         inputs.warning.appendChild(warning)
 }
-
-// inputs.sub_btn.addEventListener('click', (e)=> {
+inputs.e_mail.addEventListener('input', ()=>{
+    const regex = /^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+@.+/
+    // console.log(inputs.e_mail.test(regex))
+    console.log(regex.test(inputs.e_mail.value))
+})
+inputs.name.addEventListener('input', ()=>{
+    const wordsRegex = /^[a-zA-Z\s]+$/
+    console.log(wordsRegex.test(inputs.name.value))
+} )
+inputs.sub_btn.addEventListener('submit', (e)=> {
+    e.preventDefault()
 
 //     inputs.verify.forEach( (input, i)=>{
 //         let p = document.querySelector('.warning p')
@@ -49,4 +58,4 @@ const warning = ()=>{
 //     if(!value) return ""
 //     value = value.replace
 //     // (/^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i)
-// })
+})
