@@ -4,32 +4,35 @@
 const inputs = {
     name : document.querySelector('.name'),
     tel : document.querySelector('.tel'),
+    e_mail : document.querySelector('.e-mail'),
     checkbox : document.querySelector('#confirm'),
     sub_btn : document.querySelector('.submit'),
     verify : document.querySelectorAll('.check'),
     warning : document.querySelector('.warning')
 }
-
 inputs.sub_btn.addEventListener('click', (e)=> {
     e.preventDefault()
-    let i = 0
-    let i2 = 0
-    inputs.verify.forEach(element => {
-        if(inputs.checkbox.checked == false || element.value !== ""){
-            i2++
-            if(i2 == 1){ warning() }
-            
-        } else if(inputs.checkbox.checked && element.value !== ""){
-            i++
-            let test = element.value
-            test = test.split(" ")
-            // console.log(test.length)
-            if(i === 2){
-                console.log(i)
+    for(let i = 0; i < inputs.verify.length; i ++){
+        let values = inputs.verify.value
+        console.log(values)
+    // }
+    inputs.verify.forEach( (input, i)=>{
+        let p = document.querySelector('.warning p')
+        if(i == 0){
+            if(input.value.length < 3 && p == null){
+                console.log(p)
+                warning()
+            }
+        }else if(i == 1){
+            console.log(input.value)
+            // criar padrão para regex 
+        }else if(i == 2){
+            console.log(input)
+            if(input.value.length < 10 && p == null){
+                warning()
             }
         }
-    });
-    
+    } )
 })
 let warning = ()=>{
     let warning = document.createElement("p")
@@ -37,3 +40,8 @@ let warning = ()=>{
         warning.appendChild(content)
         inputs.warning.appendChild(warning)
 }
+// let e_mail = inputs.e_mail
+// e_mail.addEventListener('keyup', (value)=>{
+//     if(!value) return ""
+//     value = value.replace(/^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i)
+// })

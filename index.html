@@ -21,7 +21,7 @@
     <div>
     <header class="container-one">
         <div class="title-container">
-            <h1 class="title"> <span lang="en-us">Delivery</span> bom</h1>
+            <h1 class="title"> <span lang="en-us" class="title">Delivery</span> bom</h1>
             <h2 class="sub-title">Entrega boa, tem segurança do inicio ao fim.</h2>
         </div>
         <img src="./src/img/logo.png" alt="Logo do delivery safe, placa de trânsito com entregador em cima da bicicleta" class="bici-image">
@@ -34,10 +34,21 @@
     <div class="background-form">
         <form action="" class="form">
             <label for="name">Seu nome</label>
-            <input class="name check" type="text" id="name" placeholder="Nome">
+            <input class="name check" type="text" id="name" placeholder="Nome" title="Prência o primeiro nome" 
+            >
+            <!-- required -->
+
+            <label for="e-mail">E-mail</label>
+            <input type="email" placeholder="meu.e-mail@email.com" id="e-mail" class="e-mail check" 
+            >
+            <!-- title="O e-mail deve conter seu usuário o @ e o provedor." pattern="/^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i
+            " -->
 
             <label for="tel"> <span lang="en-us"></span>Whatsapp</label>
-            <input class="tel check" type="tel" placeholder="(00)00000-0000" id="tel">
+            <input class="tel check" type="tel" placeholder="(00)00000-0000" id="tel" 
+            >
+            
+            <!-- pattern="^\d{3}-\d{2}-\d{4}$" title="Número de segurança social" -->
 
             <label for="confirm confirm-container">
                 Tenho interesse de ir ao evento
