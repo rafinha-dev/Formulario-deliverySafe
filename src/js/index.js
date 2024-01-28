@@ -10,38 +10,43 @@ const inputs = {
     verify : document.querySelectorAll('.check'),
     warning : document.querySelector('.warning')
 }
-inputs.sub_btn.addEventListener('click', (e)=> {
-    e.preventDefault()
-    for(let i = 0; i < inputs.verify.length; i ++){
-        let values = inputs.verify.value
-        console.log(values)
-    // }
-    inputs.verify.forEach( (input, i)=>{
-        let p = document.querySelector('.warning p')
-        if(i == 0){
-            if(input.value.length < 3 && p == null){
-                console.log(p)
-                warning()
-            }
-        }else if(i == 1){
-            console.log(input.value)
-            // criar padrão para regex 
-        }else if(i == 2){
-            console.log(input)
-            if(input.value.length < 10 && p == null){
-                warning()
-            }
-        }
-    } )
-})
-let warning = ()=>{
+
+const warning = ()=>{
     let warning = document.createElement("p")
     let content = document.createTextNode("Preencha todos os campos antes de enviar")
         warning.appendChild(content)
         inputs.warning.appendChild(warning)
 }
+
+// inputs.sub_btn.addEventListener('click', (e)=> {
+
+//     inputs.verify.forEach( (input, i)=>{
+//         let p = document.querySelector('.warning p')
+//         if(i == 0){
+//             if(input.value.length < 3 && p == null){
+//                 console.log(p)
+//                 warning()
+//             }
+//         }else if(i == 1){
+//             console.log(input.value)
+//             // criar padrão para regex 
+//         }else if(i == 2){
+//             console.log(input)
+//             if(input.value.length < 10 && p == null){https://accounts.google.com/SignOutOptions?hl=en&continue=https://mail.google.com/mail/&service=mail&ec=GBRAFw
+//                 warning()
+//             }
+//         }
+//     } )
+//     e.preventDefault()
+// })
+
+// const validateEmail = (email) =>{
+//     let validate = /\S+@\S+\.\S+/;
+//     return validate
+// }
 // let e_mail = inputs.e_mail
 // e_mail.addEventListener('keyup', (value)=>{
 //     if(!value) return ""
-//     value = value.replace(/^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i)
+//     value = value.replace
+//     // (/^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i)
 // })

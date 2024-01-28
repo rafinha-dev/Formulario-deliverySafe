@@ -83,6 +83,15 @@ label{
     border: 1px solid gray;
     margin-bottom: 2rem;
 }
+.warning{
+    text-align: center;
+}
+.warning p{
+    font-size: 1.6rem;
+    color: red;
+    padding: 1rem;
+    font-family: var(--open-sand);
+}
 .confirm-container{
     display: block;
     position: relative;

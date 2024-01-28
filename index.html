@@ -32,35 +32,40 @@
     </section>
     </div>
     <div class="background-form">
-        <form action="" class="form">
+        <form action="https://api.sheetmonkey.io/form/fgms3pPRE24gtzhh6Htk24" method="post" class="form">
             <label for="name">Seu nome</label>
-            <input class="name check" type="text" id="name" placeholder="Nome" title="Prência o primeiro nome" 
-            >
+            <input class="name check" type="text" id="name" placeholder="Nome"  name="Example Header">
+            <!-- title="Prência o primeiro nome"  -->
             <!-- required -->
 
             <label for="e-mail">E-mail</label>
             <input type="email" placeholder="meu.e-mail@email.com" id="e-mail" class="e-mail check" 
+            name="Example Header"
             >
             <!-- title="O e-mail deve conter seu usuário o @ e o provedor." pattern="/^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i
             " -->
 
             <label for="tel"> <span lang="en-us"></span>Whatsapp</label>
             <input class="tel check" type="tel" placeholder="(00)00000-0000" id="tel" 
+            name="Example Header"
             >
             
             <!-- pattern="^\d{3}-\d{2}-\d{4}$" title="Número de segurança social" -->
 
             <label for="confirm confirm-container">
                 Tenho interesse de ir ao evento
-                <input type="checkbox" id="confirm">
+                <input type="checkbox" id="confirm" name="Example Header">
                 <span class="checkmark"></span>
             </label>
             <div class="warning">
                 
             </div>
 
-            <input type="submit" value="Enviar" class="submit">
+            <input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
+
+            <input type="submit" value="Submit" class="submit">
         </form>
+        
     </div>
 </body>
     <script src="./src/js/index.js"></script>
