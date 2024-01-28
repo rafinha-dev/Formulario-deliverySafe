@@ -26,6 +26,18 @@ inputs.name.addEventListener('input', ()=>{
     const wordsRegex = /^[a-zA-Z\s]+$/
     console.log(wordsRegex.test(inputs.name.value))
 } )
+inputs.tel.addEventListener('keyup', (e)=>{
+    let tel = e.target
+    tel.value = phoneMask(tel.value)
+    console.log(tel)
+})
+const phoneMask = (tel)=>{
+    if(!tel) return ""
+    tel = tel.replace(/\D/g,'')
+    tel = tel.replace(/(\d{2})(\d)/,"($1) $2")
+    tel = tel.replace(/(\d)(\d{4})$/,"$1-$2")
+    return tel
+}
 inputs.sub_btn.addEventListener('submit', (e)=> {
     e.preventDefault()
 
