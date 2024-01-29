@@ -52,7 +52,6 @@ const handleSubmit = (e) =>{
         body: JSON.stringify({name: 'rafael', email: 'meuemail@gmail.com'})
     })
 }
-
 inputs.form.addEventListener('submit', (e) =>{
     e.preventDefault()
     let name = inputs.name.value
@@ -66,5 +65,5 @@ inputs.form.addEventListener('submit', (e) =>{
             'Content-Type' : 'application/json',
         }, 
         body: JSON.stringify({name: name , email: email , tel: phone})
-    })
+    }).then(inputs.sub_btn.value = "Enviado").value
 })
