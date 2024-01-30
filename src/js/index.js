@@ -1,6 +1,3 @@
-// Os campos devem ser prênchidos completamente para o envio do formulario, caso contrário mostrar uma mensagem de erro caso algum não tenha ido preênchido.
-// O botão de tenho interesse de ir ao evento é obrigatório, caso não marcado deve mostrar uma mensagem
-// O formulário estará pronto para ser enviado quando todos campos estiverem preênchidos completamente
 const inputs = {
     name : document.querySelector('.name'),
     tel : document.querySelector('.tel'),
@@ -46,7 +43,7 @@ const phoneMask = (tel)=>{
 const handleSubmit = (e) =>{
     e.preventDefaut()
 
-    fetch('https://api.sheetmonkey.io/form/fgms3pPRE24gtzhh6Htk24', {
+    fetch('https://api.sheetmonkey.io/form/nQVbFGMfDs1aVRJKYYXE8L', {
 
         method: 'post',
         headers: {
@@ -61,7 +58,7 @@ inputs.form.addEventListener('submit', (e) =>{
     let name = inputs.name.value
     let phone = inputs.tel.value
     let email = inputs.e_mail.value
-    fetch('https://api.sheetmonkey.io/form/fgms3pPRE24gtzhh6Htk24', {
+    fetch('https://api.sheetmonkey.io/form/nQVbFGMfDs1aVRJKYYXE8L', {
 
         method: 'post',
         headers: {
