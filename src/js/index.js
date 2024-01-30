@@ -27,6 +27,10 @@ const warning = ()=>{
 //     const wordsRegex = /^[a-zA-Z\s]+$/
 //     console.log(wordsRegex.test(inputs.name.value))
 // } )
+inputs.tel.addEventListener('input', ()=>{
+    const regex = /^[0-9]+$/
+    console.log(regex.test(inputs.tel.value))
+} )
 inputs.tel.addEventListener('keyup', (e)=>{
     let tel = e.target
     tel.value = phoneMask(tel.value)
@@ -65,5 +69,10 @@ inputs.form.addEventListener('submit', (e) =>{
             'Content-Type' : 'application/json',
         }, 
         body: JSON.stringify({name: name , email: email , tel: phone})
-    }).then(inputs.sub_btn.value = "Enviado").value
+    }).then(inputs.sub_btn.value = "Enviado").then(()=> {
+        setTimeout( ()=> {
+          inputs.sub_btn.value = "Enviar"
+          
+        }, 3000 );
+      })
 })
